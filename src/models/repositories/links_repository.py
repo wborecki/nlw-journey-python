@@ -15,7 +15,7 @@ class LinksRepository:
             """, (
                 link_infos["id"],
                 link_infos["trip_id"],
-                link_infos["link"],
+                link_infos["link_id"],
                 link_infos["title"],
             )
         )
