@@ -11,3 +11,4 @@ if response.status_code == 200:
     print(account)
 else:
     raise Exception(f"Account not created: {response.text}")
+
