@@ -1,7 +1,7 @@
 from typing import Tuple, List
 from sqlite3 import Connection
 
-class ActivitiesToInviteRepository:
+class ActivitiesRepository:
     def __init__(self, conn: Connection) -> None:
         self.__conn = conn
 
@@ -21,12 +21,12 @@ class ActivitiesToInviteRepository:
         )
         self.__conn.commit()
 
-    def find_activitiies_from_trip(self, trip_id: str) -> List[Tuple]:
+    def find_activities_from_trip(self, trip_id: str) -> List[Tuple]:
         cursor = self.__conn.cursor()
         cursor.execute(
             """
             SELECT * FROM activities WHERE trip_id = ?
             """, (trip_id,)
         )
-        activitiies = cursor.fetchall()
-        return activitiies
+        activities = cursor.fetchall()
+        return activities
